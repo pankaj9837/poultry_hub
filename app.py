@@ -120,9 +120,7 @@ def is_request_signature_valid(req):
 # Firebase setup
 
 cred = credentials.Certificate('/etc/secrets/serviceAccountKey.json')
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://poultryhub-5242a-default-rtdb.asia-southeast1.firebasedatabase.app'
-})
+firebase_admin.initialize_app(cred)
 
 WHATSAPP_ACCESS_TOKEN = "EACH6PXeLx50BO39th5RhjYBaIEm9WN1DeqyKTanvAM50PQ2cK10GrtVZBZCJiEH5ke8481Dzit3lhhAFB8ZCqZCxhJOIRHTeORvGdiMYYeXWIQRBDjq874W0SvrYqaTP9zsgycuRZCbx4RZAA5SzS2CdEmULMjFsuJBZCboc8cIPPu4oqmzIr178N0fkrQftXQ4uQZDZD"  # Keep secure in .env
 PHONE_NUMBER_ID = "638286416039346"
