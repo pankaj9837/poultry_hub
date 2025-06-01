@@ -118,7 +118,8 @@ def is_request_signature_valid(req):
 
 
 # Firebase setup
-cred = credentials.Certificate('serviceAccountKey.json')
+
+cred = credentials.Certificate('/etc/secrets/serviceAccountKey.json')
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://poultryhub-5242a-default-rtdb.asia-southeast1.firebasedatabase.app'
 })
