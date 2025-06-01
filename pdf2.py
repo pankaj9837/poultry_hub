@@ -60,7 +60,8 @@ def draw_header(c,order):
     x=width/2
     c.drawString(x+5, height - 270, "Invoice No : NPH1001")
     today = datetime.today()
-    c.drawString(x+5, height - 285, f"Date of Invoice : {today.strftime("%d-%m-%Y")}")
+    c.drawString(x+5, height - 285, f"Date of Invoice : {today.strftime('%d-%m-%Y')}")
+
     c.setFont("Helvetica-Bold", 10)
     c.drawString(x+5, height - 300, "Place of Supply:")
     c.setFont("Helvetica", 10)
