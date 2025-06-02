@@ -285,8 +285,8 @@ def add_product():
                 'invoice_id': invoice,
                 'id':ledger_ref.key,
                 'date': datetime.now().strftime("%Y-%m-%d"),
-                'dr':[{'ledger':'purchase account','particular':'Goods Purchased','amt':total}],
-                'cr':[{'ledger':'credit account','particular':'Goods Purchased','amt':total}],
+                'dr':[{'ledger':'Purchase Account','particular':'Goods Purchased','amt':total}],
+                'cr':[{'ledger':'Credit','particular':'Goods Purchased','amt':total}],
                 'vendor_id': data.get('vendor_id', ''),
                 'total_amount': total,
                 'vendor_name': data.get('vendor_name', 'Unknown')
