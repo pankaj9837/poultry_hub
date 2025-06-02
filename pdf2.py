@@ -316,8 +316,8 @@ def create_bill(data):
         'invoice_id': invoice_id,
         'id':ledger_ref.key,
         'date': datetime.now().strftime("%Y-%m-%d"),
-        'dr':[{'ledger':'credit account','particular':'Goods Sold','amt':data.get('total_amount', 0)}],
-        'cr':[{'ledger':'sell account','particular':'Goods Sold','amt':data.get('total_amount', 0)}],
+        'dr':[{'ledger':'Credit','particular':'Goods Sold','amt':data.get('total_amount', 0)}],
+        'cr':[{'ledger':'Sell Account','particular':'Goods Sold','amt':data.get('total_amount', 0)}],
         'vendor_id': data.get('vendor_id', ''),
         'total_amount': data.get('total_amount', 0),
         'vendor_name': data.get('name', 'Unknown')
