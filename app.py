@@ -414,7 +414,7 @@ def testing():
     ledgers = base_ref.get() or {}
     return generate_pdf(ledgers)
 
-def shop(parsed,from_number,number,timestamp):
+def shop(parsed,from_number,vendor,timestamp):
     try:
         new_order_ref = db.reference('confirmorders').push()
         new_order_ref.set({
@@ -429,13 +429,12 @@ def shop(parsed,from_number,number,timestamp):
         weborders = weborders_ref.get()
         # dt_object = datetime.fromtimestamp(int(timestamp))
         dt_object = datetime.fromtimestamp(int(timestamp))
-        target_mobile = number
         target_date = dt_object.date().isoformat()
         matching_orders = []
-        # print(target_mobile,target_date,timestamp)
+        print(vendor,target_date,timestamp)
 
         for key, order in weborders.items():
-            mobile = str(order.get('mobile'))
+            vendor_id = str(order.get('vendor_id'))
             date_str = order.get('date')
             
             # Extract just the date part and keep full datetime for sorting
@@ -446,7 +445,7 @@ def shop(parsed,from_number,number,timestamp):
                 except ValueError:
                     continue
                 
-                if mobile == target_mobile and only_date == target_date:
+                if vendor == vendor_id and only_date == target_date:
                     matching_orders.append({
                         'id': key,
                         **order,
